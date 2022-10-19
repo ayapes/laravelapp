@@ -169,3 +169,5 @@ Route::get('person','PersonController@index');
 Route::get('person/find','PersonController@find');
 Route::post('person/find','PersonController@search');
 Route::post('person/create','PersonController@create');
+Route::get('person/edit','PersonController@edit');
+Route::post('person/edit','PersonController@update');

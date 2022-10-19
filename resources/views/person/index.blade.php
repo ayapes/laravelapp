@@ -32,11 +32,13 @@
 @endsection
 @section('content')
 <div class="database">
+  <p class="title box"></p>
   <p class="title box"><span>ID</span></p>
   <p class="title box"><span>Name</span></p>
   <p class="title box"><span>Mail</span></p>
   <p class="title box"><span>Age</span></p>
   @foreach($items as $item)
+  <p class="item box"><span><a href="/person/edit?id={{$item->id}}">修正</a></span></p>
   <p class="item box"><span>{{$item->id}}</span></p>
   <p class="item box"><span>{{$item->name}}</span></p>
   <p class="item box"><span>{{$item->mail}}</span></p>

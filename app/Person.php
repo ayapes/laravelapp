@@ -15,8 +15,9 @@ class Person extends Model
         'age' => 'integer|min:0|max:150',
 
     );
-    public function getData(){
+    public function getData()
+    {
 
-        return $this -> id . ':' . $this->name .'('. $this -> age . ')';
+        return $this->id . ':' . $this->name . '(' . $this->age . ')';
     }
 }

@@ -2,6 +2,7 @@
 
 <head>
     <title>@yield('title')</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-size: 16pt;
@@ -15,6 +16,12 @@
         #wrapper {
             width: 50%;
             margin: 0 auto;
+        }
+        @media screen and (max-width: 900px){
+            #wrapper {
+            width: 80%;
+            margin: 0 auto;
+        }
         }
 
         h1 {
@@ -94,34 +101,36 @@
             margin: 0;
         }
 
-        .database>.box:nth-of-type(4n-3) {
+        .database>.box:nth-of-type(5n-4) {
             width: 10%;
         }
 
-        .database>.box:nth-of-type(4n-3)>span {
+        .database>.box:nth-of-type(5n-4)>span {
+            width: 100%;
             text-align: center;
             font-size: 65%;
             height: 100%;
         }
 
-        .database>.box:nth-of-type(4n-3)>span>a {
-            text-decoration: none;
-            color: #666;
+        .database>.box:nth-of-type(5n-3) {
+            width: 10%;
         }
 
-        .database>.box:nth-of-type(4n-3)>span>a:hover {
-            color: rgb(169, 212, 188);
+        .database>.box:nth-of-type(5n-3)>span {
+            width: 100%;
+            text-align: center;
+            height: 100%;
         }
 
-        .database>.box:nth-of-type(4n-2) {
-            width: 35%;
+        .database>.box:nth-of-type(5n-2) {
+            width: 30%;
         }
 
-        .database>.box:nth-of-type(4n-1) {
-            width: 45%;
+        .database>.box:nth-of-type(5n-1) {
+            width: 40%;
         }
 
-        .database>.box:nth-of-type(4n) {
+        .database>.box:nth-of-type(5n) {
             width: 10%;
             text-align: center;
         }
