@@ -173,4 +173,4 @@ Route::get('person/edit','PersonController@edit');
 Route::post('person/edit','PersonController@update');
 
 Route::get('board','BoardController@index');
-Route::get('create','BoardController@create');
+Route::post('board/create','BoardController@create');

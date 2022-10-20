@@ -155,6 +155,11 @@
 
         .bbs {
             width: 100%;
+            font-size:70%;
+            border-bottom:1px solid rgb(70, 70, 70);
+            line-height: 200%;
+            padding: 3px;
+            box-sizing: border-box;
         }
 
 

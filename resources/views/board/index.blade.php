@@ -16,7 +16,7 @@
   </ul>
 </div>
 @endif
-<form action="/person/create" method="post">
+<form action="/board/create" method="post">
   @csrf
   <p> person id:
     <input type="number" name="person_id">
