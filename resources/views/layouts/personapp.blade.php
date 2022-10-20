@@ -17,11 +17,12 @@
             width: 50%;
             margin: 0 auto;
         }
-        @media screen and (max-width: 900px){
+
+        @media screen and (max-width: 900px) {
             #wrapper {
-            width: 80%;
-            margin: 0 auto;
-        }
+                width: 80%;
+                margin: 0 auto;
+            }
         }
 
         h1 {
@@ -81,61 +82,69 @@
             width: 100%;
             max-width: 700px;
             margin: 0 auto;
+
+        }
+
+        .title {
+            text-align: center;
+            font-weight: bold;
+            background-color: rgb(201, 221, 216);
+            color: #666;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            box-sizing: border-box;
+
+        }
+
+        .item{
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             box-sizing: border-box;
         }
 
-        .database>.title {
-            text-align: center;
-            font-weight: bold;
-            background-color: rgb(201, 221, 216);
-            color: #666;
-
-        }
-
-        .database>.box {
+        .box {
             box-sizing: border-box;
             padding: 3px;
             margin: 0;
         }
 
-        .database>.box:nth-of-type(5n-4) {
+        .box:nth-of-type(5n-4) {
             width: 10%;
         }
 
-        .database>.box:nth-of-type(5n-4)>span {
+        .box:nth-of-type(5n-4)>span {
             width: 100%;
             text-align: center;
             font-size: 65%;
             height: 100%;
         }
 
-        .database>.box:nth-of-type(5n-3) {
+        .box:nth-of-type(5n-3) {
             width: 10%;
         }
 
-        .database>.box:nth-of-type(5n-3)>span {
+        .box:nth-of-type(5n-3)>span {
             width: 100%;
             text-align: center;
             height: 100%;
         }
 
-        .database>.box:nth-of-type(5n-2) {
+        .box:nth-of-type(5n-2) {
             width: 30%;
         }
 
-        .database>.box:nth-of-type(5n-1) {
+        .box:nth-of-type(5n-1) {
             width: 40%;
         }
 
-        .database>.box:nth-of-type(5n) {
+        .box:nth-of-type(5n) {
             width: 10%;
             text-align: center;
         }
 
-        .database>.box>span {
+        .box>span {
             display: inline-block;
             border: 1px solid #666;
             width: 100%;
@@ -143,6 +152,11 @@
             box-sizing: border-box;
             font-size: 75%;
         }
+
+        .bbs {
+            width: 100%;
+        }
+
 
         .caution {
             font-size: 70%;

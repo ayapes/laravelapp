@@ -1,4 +1,4 @@
-@extends('layouts.boardapp')
+@extends('layouts.personapp')
 {{-- 指定したファイルからレイアウトを継承--}}
 @section('title','Board.index')
 

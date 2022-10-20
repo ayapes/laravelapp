@@ -32,17 +32,30 @@
 @endsection
 @section('content')
 <div class="database">
-  <p class="title box"></p>
-  <p class="title box"><span>ID</span></p>
-  <p class="title box"><span>Name</span></p>
-  <p class="title box"><span>Mail</span></p>
-  <p class="title box"><span>Age</span></p>
+  <div class="title">
+  <p class="box"></p>
+  <p class="box"><span>ID</span></p>
+  <p class="box"><span>Name</span></p>
+  <p class="box"><span>Mail</span></p>
+  <p class="box"><span>Age</span></p>
+</div>
   @foreach($items as $item)
+  <div class="item">
   <p class="item box"><span><a href="/person/edit?id={{$item->id}}">修正</a></span></p>
-  <p class="item box"><span>{{$item->id}}</span></p>
-  <p class="item box"><span>{{$item->name}}</span></p>
-  <p class="item box"><span>{{$item->mail}}</span></p>
-  <p class="item box"><span>{{$item->age}}</span></p>
+  <p class="box"><span>{{$item->id}}</span></p>
+  <p class="box"><span>{{$item->name}}</span></p>
+  <p class="box"><span>{{$item->mail}}</span></p>
+  <p class="box"><span>{{$item->age}}</span></p>
+  </div>
+  
+  @if($item->boards != null)
+  @foreach($item->boards as $obj)
+  <p class="bbs">
+    {{$obj->getData()}}
+    </p>
+    @endforeach
+    @endif
+    
   @endforeach
 </div>
 <div>
