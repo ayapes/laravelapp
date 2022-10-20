@@ -48,6 +48,9 @@
 <div>
   @foreach($items as $item)
   <p class="data">{{$item->getData()}}</p>
+  <p>@if($item->board != null)
+    {{$item->board->getData()}}
+    @endif</p>
   @endforeach
 </div>
 @endsection

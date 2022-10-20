@@ -12,4 +12,13 @@ class BoardController extends Controller
         return view('board.index',['items' => $items]);
 
     }
+
+    public function create(Request $request){
+        $this->validate($request,Board::$rules);
+        $board = new Board;
+        $form = $request->all();
+        unset($form['_token']);
+        $board->fill($form)->save();
+        return redirect('/board');
+    }
 }
