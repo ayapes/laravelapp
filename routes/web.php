@@ -11,78 +11,78 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-// ↑　aaa.blade.php には　'aaa' でアクセスできるというきまりになってる。
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// // ↑　aaa.blade.php には　'aaa' でアクセスできるというきまりになってる。
 
-Route::get('hell',function (){
-    return '<html><body><h1>Hello!</h1><p>This is a sample page.</p></body></html>';
-});
+// Route::get('hell',function (){
+//     return '<html><body><h1>Hello!</h1><p>This is a sample page.</p></body></html>';
+// });
 
-$html = <<<EOF
-<html>
-<head>
-<title>HELLO</title>
-<style>
-body{
-    font-size:16px;
-    color:#999;
-}
-h1{
-    font-size:100pt;
-    text-align:right;
-    color: #dee;
-    margin:-40px 0px -50px 0px;
-}
-</style>
-</head>
-<body>
-<h1>Hello</h1>
-<p>This is samaple page.</p>
-<p>これはサンプルで作ったページです</p>
-</body>
-</html>
+// $html = <<<EOF
+// <html>
+// <head>
+// <title>HELLO</title>
+// <style>
+// body{
+//     font-size:16px;
+//     color:#999;
+// }
+// h1{
+//     font-size:100pt;
+//     text-align:right;
+//     color: #dee;
+//     margin:-40px 0px -50px 0px;
+// }
+// </style>
+// </head>
+// <body>
+// <h1>Hello</h1>
+// <p>This is samaple page.</p>
+// <p>これはサンプルで作ったページです</p>
+// </body>
+// </html>
 
-EOF;
+// EOF;
 
-;
+// ;
 
-Route::get('hello2',function () use ($html){
-    return $html;
-});
+// Route::get('hello2',function () use ($html){
+//     return $html;
+// });
 
 
 
-Route::get('hello3/{msg}',function ( $msg ){
+// Route::get('hello3/{msg}',function ( $msg ){
 
-$html2 = <<<EOF
-<html>
-<head>
-<title>HELLO - {$msg}page</title>
-<style>
-body{
-    font-size:16px;
-    color:#999;
-}
-h1{
-    font-size:100pt;
-    text-align:right;
-    color: #dee;
-    margin:-40px 0px -50px 0px;
-}
-</style>
-</head>
-<body>
-<h1>Hello</h1>
-<p>This is {$msg} page.</p>
-<p>これはサンプルで作ったページです</p>
-</body>
-</html>
+// $html2 = <<<EOF
+// <html>
+// <head>
+// <title>HELLO - {$msg}page</title>
+// <style>
+// body{
+//     font-size:16px;
+//     color:#999;
+// }
+// h1{
+//     font-size:100pt;
+//     text-align:right;
+//     color: #dee;
+//     margin:-40px 0px -50px 0px;
+// }
+// </style>
+// </head>
+// <body>
+// <h1>Hello</h1>
+// <p>This is {$msg} page.</p>
+// <p>これはサンプルで作ったページです</p>
+// </body>
+// </html>
 
-EOF;
-return $html2;
-});
+// EOF;
+// return $html2;
+// });
 
 // コントローラーを使ってみた↓
 
@@ -94,7 +94,7 @@ return $html2;
 
 // P49 シングルアクションコントローラ
 
-Route::get('hello5','Hello5Controller');
+Route::get('hello','HelloController@index')->middleware('auth');
 
 Route::get('list215','List215Controller@index');
 
@@ -174,3 +174,7 @@ Route::post('person/edit','PersonController@update');
 
 Route::get('board','BoardController@index');
 Route::post('board/create','BoardController@create');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

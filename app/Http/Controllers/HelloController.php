@@ -3,30 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+Use App\Person;
 
 class Hellocontroller extends Controller
 {
-    public function index(){
-        return <<<EOF
-<html>
-<head>
-<title>Hrllo/Index</title>
-<style>
-body{
-font-size: 16pt;
-color:#999;}
-h1{
-font-size: 100pt;
-text-align: right;
-color:#EEE;
-margin: -40px 0pc -50px 0px;}
-</style>
-</head>
-<body>
-<h1>Index</h1>
-<p>これはHelloコントローラのindexアクションです</p>
-</body>
-</html>
-EOF;
-    }
+    public function index(Request $request){
+
+        $user = Auth::user();
+        // $sort = $request->sort;
+        $items = Person::simplePaginate(3);
+        $param = ['items' => $items,'user'=>$user];
+
+        return view('hello.index',$param);
+
+
+       
+}
 }
